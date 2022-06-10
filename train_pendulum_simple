@@ -7,7 +7,7 @@ N="$1"
 LSD=$(( 2 * N ))
 
 OUTDIR="experiments/pendulum-simple/${N}"
-MODEL="simple[a=$LSD,b=116]"
+MODEL="simple[a=${LSD},b=116]"
 
 mkdir -p "$OUTDIR"
 echo $MODEL > "$OUTDIR/model"
@@ -18,8 +18,8 @@ date >> "$OUTDIR/progress.txt"
     --batch-size 2000                       \
     --learning-rate "0.001"                 \
     --epochs 1000                           \
-    --test-with "pendulum[n=$N,test]"       \
-    "pendulum[n=$N]"                        \
+    --test-with "pendulum[n=${N},test]"       \
+    "pendulum[n=${N}]"                        \
     "$MODEL"                                \
     "$OUTDIR/checkpoint_{epoch:0>5}.pth" | tee -a "$OUTDIR/progress.txt"
 

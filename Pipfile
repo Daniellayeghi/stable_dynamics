@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+matplotlib = "*"
+numpy = "*"
+torch = "*"
+torchvision = "*"
+tensorflow = "*"
+tensorboardx = "*"
+scikit-learn = "*"
+sympy = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
