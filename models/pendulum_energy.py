@@ -100,6 +100,7 @@ def pendulum_energy(n=1, lengths=1, masses=1, include_gpe=True, include_ke=True)
     minimum_energy = total_energy_func(**fixvalue(n, torch.tensor([[0.]*2*n]))).detach()
     return lambda inp: (total_energy_func(**fixvalue(n, inp)) - minimum_energy.to(inp)).unsqueeze(1)
 
+
 def fixvalue(n, value):
     keys = [f"q{i}_t" for i in range(n)] + [f"u{i}_t" for i in range(n)]
     rv = {}
@@ -109,6 +110,7 @@ def fixvalue(n, value):
         else:
             rv[keys[i]] = value[:,i]
     return rv
+
 
 if __name__ == "__main__":
     n = 2

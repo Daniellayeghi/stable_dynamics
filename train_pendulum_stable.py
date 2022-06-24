@@ -123,7 +123,7 @@ if __name__ == "__main__":
         '--log-to', 'runs/experiments/pendulum-1/1_3_PSICNN_5_6_7',
         '--batch-size', '2000',
         '--learning-rate', '0.001',
-        '--epochs', '1000',
+        '--epochs', '10',
         '--test-with', 'pendulum[n=1,test]', 'pendulum[n=1]',
         'stabledynamics[latent_space_dim=2,a=3,projfn=PSICNN,projfn_eps=5,smooth_v=6,hp=60,h=100,rehu=7]',
         'experiments/pendulum-1/1_3_PSICNN_5_6_7/checkpoint_{epoch:0>5}.pth'
